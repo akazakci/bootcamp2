@@ -14,6 +14,6 @@ def model_spec():
     return Pipeline([('imputer', Imputer(strategy='most_frequent')),
                     ('scaler', StandardScaler()),
                     ('select', SelectPercentile(f_classif, 85)),
-                    ('clf', AdaBoostClassifier(RandomForestClassifier(n_estimators=300, max_depth=3, n_jobs=-1), n_estimators=20))
+                    ('clf', AdaBoostClassifier(RandomForestClassifier(n_estimators=300, max_depth=3, n_jobs=-1), n_estimators=100))
                  ])
 }
