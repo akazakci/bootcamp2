@@ -16,8 +16,8 @@ def model(X_train, y_train, X_test):
 
 
 def model_spec():
-    return Pipeline([('imputer', Imputer(strategy='most_frequent')),
+    return Pclf =  Pipeline([('imputer', Imputer(strategy='most_frequent')),
                     ('scaler', StandardScaler()),
-                    ('select', SelectPercentile(f_classif, 40)),
-                     ('clf', LogisticRegression(C=.01, penalty='l2'))
+                    ('select', SelectPercentile(f_classif, 50)),
+                    ('clf', AdaBoostClassifier(RandomForestClassifier(n_estimators=300, max_depth=3, n_jobs=-1), n_estimators=20))
                  ])
